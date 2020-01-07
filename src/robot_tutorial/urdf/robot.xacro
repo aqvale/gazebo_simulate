@@ -1,0 +1,106 @@
+<?xml version="1.0" ?>
+ 
+<robot name="robot" xmlns:xacro="https://www.ros.org/wiki/xacro">
+  <xacro:property name = "cameraSize" value = "0.05" />
+  <xacro:property name = "cameraMass" value = "0.1" />
+
+  <!-- include the xacro files--> 
+  <xacro:include filename="$(find robot_tutorial)/urdf/materials.xacro"/>
+  <xacro:include filename="$(find robot_tutorial)/urdf/robot.gazebo"/>
+  <xacro:include filename="$(find robot_tutorial)/urdf/macro.xacro" />
+
+  <link name="robot_body">
+    <!-- pose and inertial -->
+    <pose>0 0 0.1 0 0 0</pose>
+    
+    <inertial>
+      <mass value="27.875"/>
+      <origin rpy="0 0 0" xyz="0 0 0.1"/>
+      <inertia ixx="1.121e+0" ixy="3.55909983e-9" ixz="-9.359e-8" iyy="1.121e+0" iyz="-3.899e-9" izz="1.816e-1"/>
+    </inertial>
+    
+    <collision name="collision_chassis">
+      <geometry>
+        <mesh filename="package://robot_tutorial/mesches/body_yes.dae" />
+      </geometry>
+    </collision>
+    
+    <visual>
+      <origin xyz="5 -8 0" rpy="0 0 0" />
+      <geometry>
+	      <mesh filename="package://robot_tutorial/mesches/body_yes.dae" />
+      </geometry>
+    </visual>
+  </link>
+
+  <!-- Create wheel right -->  
+  <xacro:link_wheel name="link_rightA_wheel"/>    
+  <xacro:joint_wheel name="joint_rightA_wheel" parent="robot_body"  child="link_rightA_wheel"  origin_xyz="4.9 -8.235 -0.326"  />
+
+  <!-- Left Wheel link -->
+  <xacro:link_wheel name="link_rightB_wheel"/>
+  <xacro:joint_wheel name="joint_rightB_wheel" parent="robot_body"   child="link_rightB_wheel"   origin_xyz="5.1 -8.235 -0.326"  />
+
+  <!-- Left Wheel link -->
+  <xacro:link_wheel name="link_leftA_wheel"/>
+  <xacro:joint_wheel name="joint_leftA_wheel" parent="robot_body"   child="link_leftA_wheel"   origin_xyz="4.9 -7.785 -0.326"  />
+
+  <!-- Left Wheel link -->
+  <xacro:link_wheel name="link_leftB_wheel"/>
+  <xacro:joint_wheel name="joint_leftB_wheel" parent="robot_body"   child="link_leftB_wheel"   origin_xyz="5.1 -7.785 -0.326"  />
+
+  <!-- <link name="sensor_laser">
+    <xacro:cylinder_inertia mass="1" r="0.05" l="0.1" />
+
+    <visual>
+      <origin xyz="4.85 -8 0.441" rpy="0 0 0" />
+      <geometry>
+        <cylinder radius="0.05" length="0.1"/>
+      </geometry>
+      <material name="white" />
+    </visual>
+
+    <collision>
+      <origin xyz="0 0 0" rpy="0 0 0"/>
+      <geometry>
+        <cylinder radius="0.05" length="0.1"/>
+      </geometry>
+    </collision>
+  </link>
+
+  <joint name="joint_robot_to_sensor_laser" type="fixed">
+    <origin xyz="0.15 0 0.05" rpy="0 0 0"/>
+    <parent link="robot_body"/>
+    <child link="sensor_laser"/>
+  </joint> -->
+  
+  <!-- Camera -->
+  <!-- <link name="camera">
+    <collision>
+      <origin xyz="0 0 0" rpy="0 0 0"/>
+      <geometry>
+        <box size="${cameraSize} ${cameraSize} ${cameraSize}"/>
+      </geometry>
+    </collision>
+    <visual>
+      <origin xyz="5.1 -8 0.41" rpy="0 0 0"/>
+      <geometry>
+        <box size="${cameraSize} ${cameraSize} ${cameraSize}"/>
+      </geometry>
+      <material name="blue"/>
+    </visual>
+    <inertial>
+      <mass value="${cameraMass}" />
+      <origin xyz="0 0 0" rpy="0 0 0"/>
+      <box_inertia m="${cameraMass}" x="${cameraSize}" y="${cameraSize}" z="${cameraSize}" />
+    </inertial>
+  </link>
+
+  <joint name="joint_robot_to_camera" type="fixed">
+    <axis xyz="0.0 1.0 0.0"/>
+    <origin xyz="0 0 0 " rpy="0.0 0.0 0.0"/>
+    <parent link="robot_body"/>
+    <child link="camera"/>
+  </joint> -->
+
+</robot>

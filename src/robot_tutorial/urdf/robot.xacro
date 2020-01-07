@@ -15,7 +15,7 @@
     
     <inertial>
       <mass value="27.875"/>
-      <origin rpy="5 -8 0" xyz="0 0 0.1"/>
+      <origin rpy="0 0 0" xyz="5 -8 0"/>
       <inertia ixx="1.121e+0" ixy="3.55909983e-9" ixz="-9.359e-8" iyy="1.121e+0" iyz="-3.899e-9" izz="1.816e-1"/>
     </inertial>
     

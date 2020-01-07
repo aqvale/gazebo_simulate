@@ -58,7 +58,7 @@
     </sensor>
   </gazebo>
 
-  <gazebo reference="camera">
+  <!-- <gazebo reference="camera">
     <material>Gazebo/Blue</material>
     <sensor type="camera" name="camera1">
       <update_rate>30.0</update_rate>
@@ -89,6 +89,6 @@
         <distortionT2>0.0</distortionT2>
       </plugin>
     </sensor>
-  </gazebo>
-  
+  </gazebo> -->
+
 </robot>

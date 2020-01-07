@@ -15,7 +15,7 @@
     
     <inertial>
       <mass value="27.875"/>
-      <origin rpy="0 0 0" xyz="0 0 0.1"/>
+      <origin rpy="5 -8 0" xyz="0 0 0.1"/>
       <inertia ixx="1.121e+0" ixy="3.55909983e-9" ixz="-9.359e-8" iyy="1.121e+0" iyz="-3.899e-9" izz="1.816e-1"/>
     </inertial>
     
@@ -27,11 +27,28 @@
     
     <visual>
       <origin xyz="5 -8 0" rpy="0 0 0" />
+      <!-- <origin xyz="0 0 0" rpy="0 0 0" /> -->
       <geometry>
 	      <mesh filename="package://robot_tutorial/mesches/body_yes.dae" />
       </geometry>
     </visual>
   </link>
+
+  <!-- Create wheel right -->  
+  <!-- <xacro:link_wheel name="link_rightA_wheel"/>    
+  <xacro:joint_wheel name="joint_rightA_wheel" parent="robot_body"  child="link_rightA_wheel"  origin_xyz="-0.1 -0.235 -0.326"  /> -->
+
+  <!-- Create wheel right --> 
+  <!-- <xacro:link_wheel name="link_rightB_wheel"/>
+  <xacro:joint_wheel name="joint_rightB_wheel" parent="robot_body"   child="link_rightB_wheel"   origin_xyz="0.1 -0.235 -0.326"  /> -->
+
+  <!-- Left Wheel link -->
+  <!-- <xacro:link_wheel name="link_leftA_wheel"/>
+  <xacro:joint_wheel name="joint_leftA_wheel" parent="robot_body"   child="link_leftA_wheel"   origin_xyz="-0.1 0.215 -0.326"  /> -->
+
+  <!-- Left Wheel link -->
+  <!-- <xacro:link_wheel name="link_leftB_wheel"/>
+  <xacro:joint_wheel name="joint_leftB_wheel" parent="robot_body"   child="link_leftB_wheel"   origin_xyz="0.1 0.215 -0.326"  /> -->
 
   <!-- Create wheel right -->  
   <xacro:link_wheel name="link_rightA_wheel"/>    

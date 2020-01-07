@@ -37,7 +37,7 @@
     <inertia ixx="${mass*(3*r*r+l*l)/12}" ixy = "0" ixz = "0" iyy="${mass*(3*r*r+l*l)/12}" iyz = "0" izz="${mass*(r*r)/2}" /> 
   </xacro:macro>
 
-  <!-- <macro name="box_inertia" params="m x y z">
+  <macro name="box_inertia" params="m x y z">
     <inertia  ixx="${m*(y*y+z*z)/12}" ixy = "0" ixz = "0"
       iyy="${m*(x*x+z*z)/12}" iyz = "0"
       izz="${m*(x*x+z*z)/12}"
@@ -48,6 +48,6 @@
       iyy="${2*m*r*r/5}" iyz = "0"
       izz="${2*m*r*r/5}"
     />
-  </macro> -->
+  </macro>
 
 </robot>

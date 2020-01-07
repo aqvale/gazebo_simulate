@@ -3,12 +3,22 @@
   <gazebo reference="link_chassis">
     <material>Gazebo/Orange</material>
   </gazebo>
-  <gazebo reference="link_left_wheel">
+
+  <gazebo reference="link_leftA_wheel">
     <material>Gazebo/Blue</material>
   </gazebo>
-  <gazebo reference="link_right_wheel">
+  <gazebo reference="link_leftB_wheel">
+    <material>Gazebo/Green</material>
+  </gazebo>
+
+  <gazebo reference="link_rightA_wheel">
     <material>Gazebo/Blue</material>
   </gazebo>
+  <gazebo reference="link_rightB_wheel">
+    <material>Gazebo/Green</material>
+  </gazebo>
+
+  
 
   <gazebo>
     <plugin filename="libgazebo_ros_diff_drive.so" name="differential_drive_controller">
@@ -58,7 +68,7 @@
     </sensor>
   </gazebo>
 
-  <!-- <gazebo reference="camera">
+  <gazebo reference="camera">
     <material>Gazebo/Blue</material>
     <sensor type="camera" name="camera1">
       <update_rate>30.0</update_rate>
@@ -89,6 +99,6 @@
         <distortionT2>0.0</distortionT2>
       </plugin>
     </sensor>
-  </gazebo> -->
+  </gazebo>
 
 </robot>

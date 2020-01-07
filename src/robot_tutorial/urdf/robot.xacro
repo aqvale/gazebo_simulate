@@ -35,26 +35,10 @@
   </link>
 
   <!-- Create wheel right -->  
-  <!-- <xacro:link_wheel name="link_rightA_wheel"/>    
-  <xacro:joint_wheel name="joint_rightA_wheel" parent="robot_body"  child="link_rightA_wheel"  origin_xyz="-0.1 -0.235 -0.326"  /> -->
-
-  <!-- Create wheel right --> 
-  <!-- <xacro:link_wheel name="link_rightB_wheel"/>
-  <xacro:joint_wheel name="joint_rightB_wheel" parent="robot_body"   child="link_rightB_wheel"   origin_xyz="0.1 -0.235 -0.326"  /> -->
-
-  <!-- Left Wheel link -->
-  <!-- <xacro:link_wheel name="link_leftA_wheel"/>
-  <xacro:joint_wheel name="joint_leftA_wheel" parent="robot_body"   child="link_leftA_wheel"   origin_xyz="-0.1 0.215 -0.326"  /> -->
-
-  <!-- Left Wheel link -->
-  <!-- <xacro:link_wheel name="link_leftB_wheel"/>
-  <xacro:joint_wheel name="joint_leftB_wheel" parent="robot_body"   child="link_leftB_wheel"   origin_xyz="0.1 0.215 -0.326"  /> -->
-
-  <!-- Create wheel right -->  
   <xacro:link_wheel name="link_rightA_wheel"/>    
   <xacro:joint_wheel name="joint_rightA_wheel" parent="robot_body"  child="link_rightA_wheel"  origin_xyz="4.9 -8.235 -0.326"  />
 
-  <!-- Left Wheel link -->
+  <!-- Create wheel right --> 
   <xacro:link_wheel name="link_rightB_wheel"/>
   <xacro:joint_wheel name="joint_rightB_wheel" parent="robot_body"   child="link_rightB_wheel"   origin_xyz="5.1 -8.235 -0.326"  />
 
@@ -66,7 +50,7 @@
   <xacro:link_wheel name="link_leftB_wheel"/>
   <xacro:joint_wheel name="joint_leftB_wheel" parent="robot_body"   child="link_leftB_wheel"   origin_xyz="5.1 -7.785 -0.326"  />
 
-  <!-- <link name="sensor_laser">
+  <link name="sensor_laser">
     <xacro:cylinder_inertia mass="1" r="0.05" l="0.1" />
 
     <visual>
@@ -89,10 +73,10 @@
     <origin xyz="0.15 0 0.05" rpy="0 0 0"/>
     <parent link="robot_body"/>
     <child link="sensor_laser"/>
-  </joint> -->
+  </joint>
   
   <!-- Camera -->
-  <!-- <link name="camera">
+  <link name="camera">
     <collision>
       <origin xyz="0 0 0" rpy="0 0 0"/>
       <geometry>
@@ -100,7 +84,7 @@
       </geometry>
     </collision>
     <visual>
-      <origin xyz="5.1 -8 0.41" rpy="0 0 0"/>
+      <origin xyz="0 0 0" rpy="0 0 0"/>
       <geometry>
         <box size="${cameraSize} ${cameraSize} ${cameraSize}"/>
       </geometry>
@@ -115,9 +99,9 @@
 
   <joint name="joint_robot_to_camera" type="fixed">
     <axis xyz="0.0 1.0 0.0"/>
-    <origin xyz="0 0 0 " rpy="0.0 0.0 0.0"/>
+    <origin  xyz="5.1 -8 0.41" rpy="0.0 0.0 0.0"/>
     <parent link="robot_body"/>
     <child link="camera"/>
-  </joint> -->
+  </joint>
 
 </robot>
